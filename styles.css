@@ -36,6 +36,128 @@ body {
         linear-gradient(180deg, #fffdf9 0%, #fff6ed 52%, #fffaf4 100%);
 }
 
+.dev-notice {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%, -140%);
+    opacity: 0;
+    width: min(92vw, 640px);
+    min-height: 64px;
+    z-index: 1400;
+    border-radius: 14px;
+    border: 1px solid rgba(15, 118, 110, 0.3);
+    background: linear-gradient(120deg, rgba(15, 118, 110, 0.97), rgba(20, 184, 166, 0.96));
+    box-shadow: 0 16px 38px rgba(15, 118, 110, 0.28);
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.78rem 0.88rem;
+    color: #ecfeff;
+    overflow: hidden;
+    pointer-events: none;
+    transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.42s ease;
+}
+
+.dev-notice.show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dev-notice.hide {
+    transform: translate(-50%, -140%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dev-notice-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0.26) 50%, rgba(255, 255, 255, 0) 85%);
+    transform: translateX(-130%);
+    animation: noticeSweep 2.7s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.dev-notice-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+    background: rgba(240, 253, 250, 0.2);
+    border: 1px solid rgba(236, 254, 255, 0.35);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex: 0 0 auto;
+    animation: noticeBob 1.8s ease-in-out infinite;
+}
+
+.dev-notice-copy {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.dev-notice-copy strong {
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.dev-notice-copy span {
+    font-size: 0.78rem;
+    opacity: 0.95;
+    line-height: 1.3;
+}
+
+.dev-notice-close {
+    margin-left: auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid rgba(236, 254, 255, 0.45);
+    background: rgba(15, 118, 110, 0.34);
+    color: #ecfeff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.18s ease, background 0.18s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.dev-notice-close:hover {
+    transform: scale(1.04);
+    background: rgba(15, 118, 110, 0.58);
+}
+
+@keyframes noticeSweep {
+    0%,
+    100% {
+        transform: translateX(-130%);
+    }
+
+    55% {
+        transform: translateX(130%);
+    }
+}
+
+@keyframes noticeBob {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
 .loading-screen {
     position: fixed;
     inset: 0;
@@ -1124,6 +1246,33 @@ body {
 }
 
 @media (max-width: 768px) {
+    .dev-notice {
+        width: calc(100vw - 1rem);
+        top: 0.5rem;
+        padding: 0.72rem;
+        gap: 0.65rem;
+    }
+
+    .dev-notice-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        font-size: 1rem;
+    }
+
+    .dev-notice-copy strong {
+        font-size: 0.82rem;
+    }
+
+    .dev-notice-copy span {
+        font-size: 0.72rem;
+    }
+
+    .dev-notice-close {
+        width: 30px;
+        height: 30px;
+    }
+
     .main-header {
         width: 96%;
         padding: 0.9rem;
