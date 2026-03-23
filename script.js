@@ -73,6 +73,7 @@ window.addEventListener('load', () => {
 
         loadingScreen.classList.add('hidden');
         mainApp.classList.add('visible');
+        initDevelopmentNotice();
 
         setTimeout(() => {
             loadingScreen.style.display = 'none';
@@ -101,6 +102,35 @@ function updateDateTime() {
 
 updateDateTime();
 setInterval(updateDateTime, 60000); // Update every minute
+
+// ══════════════════════════════════════════
+// DEVELOPMENT NOTICE
+// ══════════════════════════════════════════
+let noticeInitialized = false;
+
+function initDevelopmentNotice() {
+    if (noticeInitialized) {
+        return;
+    }
+
+    const notice = document.getElementById('dev-notice');
+    const closeBtn = document.getElementById('dev-notice-close');
+
+    if (!notice || !closeBtn) {
+        return;
+    }
+
+    noticeInitialized = true;
+
+    requestAnimationFrame(() => {
+        notice.classList.add('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        notice.classList.remove('show');
+        notice.classList.add('hide');
+    }, { once: true });
+}
 
 // ══════════════════════════════════════════
 // UI ENHANCEMENTS (ANIMATIONS)
