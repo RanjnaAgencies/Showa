@@ -58,17 +58,40 @@
 
         <!-- Mobile Header -->
         <header class="m-header" id="mHeader">
-            <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <div class="m-brand">
                 <div class="m-logo">S</div>
                 <span>Showa</span>
             </div>
             <div class="m-clock" id="mClock"></div>
         </header>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="bottom-nav" id="bottomNav">
+            <button class="nav-btn active" data-page="attendance" onclick="switchPage('attendance')">
+                <span class="btn-icon">👤</span>
+                <span class="btn-text">Attendance</span>
+            </button>
+            <button class="nav-btn" data-page="visits" onclick="switchPage('visits')">
+                <span class="btn-icon">📍</span>
+                <span class="btn-text">Visits</span>
+            </button>
+            <button class="nav-btn" data-page="payments" onclick="switchPage('payments')">
+                <span class="btn-icon">💳</span>
+                <span class="btn-text">Payments</span>
+            </button>
+            <button class="nav-btn" data-page="ecommerce" onclick="switchPage('ecommerce')">
+                <span class="btn-icon">📦</span>
+                <span class="btn-text">E-Com</span>
+            </button>
+            <button class="nav-btn" data-page="catalogue" onclick="switchPage('catalogue')">
+                <span class="btn-icon">📚</span>
+                <span class="btn-text">Catalogue</span>
+            </button>
+            <button class="nav-btn" data-page="service" onclick="switchPage('service')">
+                <span class="btn-icon">🔧</span>
+                <span class="btn-text">Service</span>
+            </button>
+        </nav>
 
         <!-- Sidebar -->
         <aside id="sidebar">
@@ -83,32 +106,32 @@
             </div>
 
             <nav class="nav-list">
-                <a href="#" class="nav-link active" data-page="attendance" onclick="navigateTo('attendance',event)">
+                <a href="javascript:void(0)" class="nav-link active" data-page="attendance">
                     <div class="nav-icon"><span>👤</span></div>
                     <span class="nav-text">Attendance</span>
                     <div class="nav-active-bg"></div>
                 </a>
-                <a href="#" class="nav-link" data-page="visits" onclick="navigateTo('visits',event)">
+                <a href="javascript:void(0)" class="nav-link" data-page="visits">
                     <div class="nav-icon"><span>📍</span></div>
                     <span class="nav-text">Retailer Visit</span>
                     <div class="nav-active-bg"></div>
                 </a>
-                <a href="#" class="nav-link" data-page="payments" onclick="navigateTo('payments',event)">
+                <a href="javascript:void(0)" class="nav-link" data-page="payments">
                     <div class="nav-icon"><span>💳</span></div>
                     <span class="nav-text">Payments</span>
                     <div class="nav-active-bg"></div>
                 </a>
-                <a href="#" class="nav-link" data-page="ecommerce" onclick="navigateTo('ecommerce',event)">
+                <a href="javascript:void(0)" class="nav-link" data-page="ecommerce">
                     <div class="nav-icon"><span>📦</span></div>
                     <span class="nav-text">E-Commerce</span>
                     <div class="nav-active-bg"></div>
                 </a>
-                <a href="#" class="nav-link" data-page="catalogue" onclick="navigateTo('catalogue',event)">
+                <a href="javascript:void(0)" class="nav-link" data-page="catalogue">
                     <div class="nav-icon"><span>📚</span></div>
                     <span class="nav-text">Catalogue</span>
                     <div class="nav-active-bg"></div>
                 </a>
-                <a href="#" class="nav-link" data-page="service" onclick="navigateTo('service',event)">
+                <a href="javascript:void(0)" class="nav-link" data-page="service">
                     <div class="nav-icon"><span>🔧</span></div>
                     <span class="nav-text">Service Center</span>
                     <div class="nav-active-bg"></div>
@@ -475,9 +498,6 @@
             </section>
         </main>
     </div>
-
-    <!-- Overlay -->
-    <div id="overlay" onclick="closeMenu()"></div>
 
     <!-- Modal -->
     <div id="modal">
