@@ -2,770 +2,501 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showa Ranjna's CRM Portal | Ranjna Agencies Private Limited</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Showa | Ranjna Agencies</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="loader-bg-orb orb-one"></div>
-        <div class="loader-bg-orb orb-two"></div>
-        <div class="loader-bg-grid"></div>
-        <div class="loader-container">
-            <div class="loader-ring"></div>
-            <div class="loader-title">
-                <h1 class="loader-brand">
-                    <span class="loader-brand-main">Showa</span>
-                    <span class="loader-brand-sub">Ranjna's CRM Portal</span>
+    <!-- Premium Splash -->
+    <div id="splash">
+        <div class="mesh-bg"></div>
+        <div class="glow-orbs">
+            <div class="glow g1"></div>
+            <div class="glow g2"></div>
+            <div class="glow g3"></div>
+        </div>
+        <div class="splash-center">
+            <div class="logo-container">
+                <div class="logo-morph">
+                    <div class="morph-bg"></div>
+                    <span>S</span>
+                </div>
+                <svg class="logo-circles" viewBox="0 0 200 200">
+                    <circle class="c1" cx="100" cy="100" r="90"/>
+                    <circle class="c2" cx="100" cy="100" r="80"/>
+                    <circle class="c3" cx="100" cy="100" r="70"/>
+                </svg>
+            </div>
+            <div class="splash-text">
+                <h1 class="reveal-text">
+                    <span>S</span><span>H</span><span>O</span><span>W</span><span>A</span>
                 </h1>
-                <p>Secure Employee Operations Terminal</p>
+                <p class="tagline">Ranjna Agencies Private Limited</p>
             </div>
-            <div class="loader-meta">
-                <div class="loader-console">
-                    <div class="loader-console-line">
-                        <span class="loader-prompt">$</span>
-                        <span class="loader-status" id="loader-status">bootstrapping core modules</span>
-                        <span class="loader-cursor" aria-hidden="true"></span>
-                    </div>
-                    <div class="loader-console-line muted">
-                        <span class="loader-prompt">&gt;</span>
-                        <span id="loader-hint">npm run crm:start --secure</span>
-                    </div>
-                </div>
-                <span class="loader-percent" id="loader-percent">0%</span>
+            <div class="progress-wrap">
+                <div class="progress-bar"></div>
+                <div class="progress-glow"></div>
             </div>
-        </div>
-        <div class="loading-bar">
-            <div class="loading-progress" id="loading-progress"></div>
         </div>
     </div>
 
-    <!-- Development Notification -->
-    <div id="dev-notice" class="dev-notice" role="status" aria-live="polite" aria-atomic="true">
-        <div class="dev-notice-glow" aria-hidden="true"></div>
-        <div class="dev-notice-icon" aria-hidden="true">⚙️</div>
-        <div class="dev-notice-copy">
-            <strong>Website under development.</strong>
-            <span>Some features may be unavailable.</span>
-        </div>
-        <button id="dev-notice-close" class="dev-notice-close" type="button" aria-label="Close development notice">✕</button>
-    </div>
-
-    <!-- Main Container -->
-    <div id="main-app" class="main-app">
-        <!-- Header -->
-        <header class="main-header">
-            <div class="header-content">
-                <div class="header-left">
-                    <div class="company-logo">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <div class="header-titles">
-                        <h1 class="portal-title">Showa Ranjna's CRM Portal</h1>
-                        <p class="company-name">Ranjna Agencies Private Limited</p>
-                    </div>
-                </div>
-                <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Open navigation menu" aria-controls="main-nav" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div class="header-right">
-                    <div class="status-badge">
-                        <span class="status-dot"></span>
-                        <span>System Online</span>
-                    </div>
-                    <div class="date-time" id="current-datetime"></div>
-                </div>
+    <!-- App -->
+    <div id="app">
+        <!-- Mesh Background -->
+        <div class="app-bg">
+            <div class="mesh"></div>
+            <div class="floating-shapes">
+                <div class="shape s1"></div>
+                <div class="shape s2"></div>
+                <div class="shape s3"></div>
+                <div class="shape s4"></div>
             </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <header class="m-header" id="mHeader">
+            <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="m-brand">
+                <div class="m-logo">S</div>
+                <span>Showa</span>
+            </div>
+            <div class="m-clock" id="mClock"></div>
         </header>
 
-        <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" onclick="closeMobileNav()"></div>
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="brand-area">
+                <div class="brand-logo">
+                    <div class="logo-inner">S</div>
+                </div>
+                <div class="brand-info">
+                    <strong>Showa</strong>
+                    <small>Ranjna Agencies</small>
+                </div>
+            </div>
 
-        <!-- Navigation -->
-        <nav class="main-nav" id="main-nav">
-            <button class="nav-btn active" onclick="showSection('attendance')" data-section="attendance">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
-                </svg>
-                <span>Attendance</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('checkout')" data-section="checkout">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 11 12 14 22 4"/>
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-                </svg>
-                <span>Check Out</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('retailer')" data-section="retailer">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                    <circle cx="12" cy="10" r="3"/>
-                </svg>
-                <span>Retailer Visit</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('payments')" data-section="payments">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="5" width="20" height="14" rx="2"/>
-                    <line x1="2" y1="10" x2="22" y2="10"/>
-                </svg>
-                <span>Payments</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('ecommerce')" data-section="ecommerce">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-                    <line x1="3" y1="6" x2="21" y2="6"/>
-                    <path d="M16 10a4 4 0 0 1-8 0"/>
-                </svg>
-                <span>E-Commerce</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('catalogue')" data-section="catalogue">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                </svg>
-                <span>Catalogue</span>
-            </button>
-            <button class="nav-btn" onclick="showSection('servicecenter')" data-section="servicecenter">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 9V5a3 3 0 0 0-6 0v4"/>
-                    <rect x="2" y="9" width="20" height="11" rx="2"/>
-                    <path d="M12 13v3"/>
-                </svg>
-                <span>Service Center</span>
-            </button>
-        </nav>
+            <nav class="nav-list">
+                <a href="#" class="nav-link active" data-page="attendance" onclick="navigateTo('attendance',event)">
+                    <div class="nav-icon"><span>👤</span></div>
+                    <span class="nav-text">Attendance</span>
+                    <div class="nav-active-bg"></div>
+                </a>
+                <a href="#" class="nav-link" data-page="visits" onclick="navigateTo('visits',event)">
+                    <div class="nav-icon"><span>📍</span></div>
+                    <span class="nav-text">Retailer Visit</span>
+                    <div class="nav-active-bg"></div>
+                </a>
+                <a href="#" class="nav-link" data-page="payments" onclick="navigateTo('payments',event)">
+                    <div class="nav-icon"><span>💳</span></div>
+                    <span class="nav-text">Payments</span>
+                    <div class="nav-active-bg"></div>
+                </a>
+                <a href="#" class="nav-link" data-page="ecommerce" onclick="navigateTo('ecommerce',event)">
+                    <div class="nav-icon"><span>📦</span></div>
+                    <span class="nav-text">E-Commerce</span>
+                    <div class="nav-active-bg"></div>
+                </a>
+                <a href="#" class="nav-link" data-page="catalogue" onclick="navigateTo('catalogue',event)">
+                    <div class="nav-icon"><span>📚</span></div>
+                    <span class="nav-text">Catalogue</span>
+                    <div class="nav-active-bg"></div>
+                </a>
+                <a href="#" class="nav-link" data-page="service" onclick="navigateTo('service',event)">
+                    <div class="nav-icon"><span>🔧</span></div>
+                    <span class="nav-text">Service Center</span>
+                    <div class="nav-active-bg"></div>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span>System Online</span>
+                </div>
+            </div>
+        </aside>
 
         <!-- Main Content -->
-        <main class="main-content">
-            <!-- Check In Section -->
-            <section id="attendance-section" class="content-section active">
-                <div class="section-header">
-                    <div>
-                        <h2 class="section-title">Employee Check In</h2>
-                        <p class="section-subtitle">Select employee to mark attendance check-in</p>
+        <main id="main">
+            <!-- Attendance -->
+            <section class="page active" id="attendance">
+                <div class="page-intro">
+                    <div class="page-info">
+                        <h1 class="page-title">Employee Check In</h1>
+                        <p class="page-desc">Mark attendance for field employees</p>
                     </div>
+                    <div class="live-clock" id="mainClock"></div>
                 </div>
 
-                <div class="employees-grid">
-                    <!-- Vishal -->
-                    <div class="employee-card" onclick="openForm('checkin', 'Vishal - EMP0156 - Check In')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
-                                <span>VI</span>
+                <div class="cards-grid">
+                    <article class="card" onclick="openForm('checkin','Vishal')" style="--i:0">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row">
+                                <div class="user-avatar ua1">VI</div>
+                                <div class="user-info">
+                                    <h3>Vishal</h3>
+                                    <span>EMP0156</span>
+                                </div>
                             </div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Vishal</h3>
-                                <span class="employee-code">EMP0156</span>
+                            <div class="user-tags">
+                                <span class="tag tag-blue">Etawah</span>
+                                <span class="tag tag-amber">Field</span>
                             </div>
+                            <button class="action-btn">Check In <span class="arrow">→</span></button>
                         </div>
-                        <div class="card-footer">
-                            <span class="badge badge-etawah">Etawah</span>
-                            <span class="badge badge-field">Field Staff</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Mark Check In</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
+                    </article>
 
-                    <!-- Shailendra -->
-                    <div class="employee-card" onclick="openForm('checkin', 'Shailendra - EMP0159 - Check In')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">
-                                <span>SH</span>
+                    <article class="card" onclick="openForm('checkin','Shailendra')" style="--i:1">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row">
+                                <div class="user-avatar ua2">SH</div>
+                                <div class="user-info">
+                                    <h3>Shailendra</h3>
+                                    <span>EMP0159</span>
+                                </div>
                             </div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Shailendra</h3>
-                                <span class="employee-code">EMP0159</span>
+                            <div class="user-tags">
+                                <span class="tag tag-blue">Etawah</span>
+                                <span class="tag tag-amber">Field</span>
                             </div>
+                            <button class="action-btn">Check In <span class="arrow">→</span></button>
                         </div>
-                        <div class="card-footer">
-                            <span class="badge badge-etawah">Etawah</span>
-                            <span class="badge badge-field">Field Staff</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Mark Check In</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
+                    </article>
 
-                    <!-- Sanjeev -->
-                    <div class="employee-card" onclick="openForm('checkin', 'Sanjeev - EMP005 - Check In')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);">
-                                <span>SA</span>
+                    <article class="card" onclick="openForm('checkin','Sanjeev')" style="--i:2">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row">
+                                <div class="user-avatar ua3">SA</div>
+                                <div class="user-info">
+                                    <h3>Sanjeev</h3>
+                                    <span>EMP005</span>
+                                </div>
                             </div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Sanjeev</h3>
-                                <span class="employee-code">EMP005</span>
+                            <div class="user-tags">
+                                <span class="tag tag-blue">Etawah</span>
+                                <span class="tag tag-amber">Field</span>
                             </div>
+                            <button class="action-btn">Check In <span class="arrow">→</span></button>
                         </div>
-                        <div class="card-footer">
-                            <span class="badge badge-etawah">Etawah</span>
-                            <span class="badge badge-field">Field Staff</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Mark Check In</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
+                    </article>
 
-                    <!-- Ritik -->
-                    <div class="employee-card" onclick="openForm('checkin', 'Ritik - EMPECOM02 - Check In')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #10b981, #059669);">
-                                <span>RI</span>
+                    <article class="card" onclick="openForm('checkin','Ritik')" style="--i:3">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row">
+                                <div class="user-avatar ua4">RI</div>
+                                <div class="user-info">
+                                    <h3>Ritik</h3>
+                                    <span>EMPECOM02</span>
+                                </div>
                             </div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Ritik</h3>
-                                <span class="employee-code">EMPECOM02</span>
+                            <div class="user-tags">
+                                <span class="tag tag-blue">Etawah</span>
+                                <span class="tag tag-rose">E-Com</span>
                             </div>
+                            <button class="action-btn">Check In <span class="arrow">→</span></button>
                         </div>
-                        <div class="card-footer">
-                            <span class="badge badge-etawah">Etawah</span>
-                            <span class="badge badge-ecom">E-Commerce</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Mark Check In</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
+                    </article>
 
-                    <!-- EMP0263 -->
-                    <div class="employee-card" onclick="openForm('checkin', 'Agra Employee - EMP0263 - Check In')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
-                                <span>A3</span>
+                    <article class="card" onclick="openForm('checkin','EMP0263')" style="--i:4">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row">
+                                <div class="user-avatar ua5">A3</div>
+                                <div class="user-info">
+                                    <h3>Agra Employee</h3>
+                                    <span>EMP0263</span>
+                                </div>
                             </div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Agra Employee</h3>
-                                <span class="employee-code">EMP0263</span>
+                            <div class="user-tags">
+                                <span class="tag tag-emerald">Agra</span>
+                                <span class="tag tag-amber">Field</span>
                             </div>
+                            <button class="action-btn">Check In <span class="arrow">→</span></button>
                         </div>
-                        <div class="card-footer">
-                            <span class="badge badge-agra">Agra</span>
-                            <span class="badge badge-field">Field Staff</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Mark Check In</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
+                    </article>
 
-                    <!-- EMP0264 -->
-                    <div class="employee-card" onclick="openForm('checkin', 'Agra Employee - EMP0264 - Check In')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
-                                <span>A4</span>
+                    <article class="card" onclick="openForm('checkin','EMP0264')" style="--i:5">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row">
+                                <div class="user-avatar ua6">A4</div>
+                                <div class="user-info">
+                                    <h3>Agra Employee</h3>
+                                    <span>EMP0264</span>
+                                </div>
                             </div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Agra Employee</h3>
-                                <span class="employee-code">EMP0264</span>
+                            <div class="user-tags">
+                                <span class="tag tag-emerald">Agra</span>
+                                <span class="tag tag-amber">Field</span>
                             </div>
+                            <button class="action-btn">Check In <span class="arrow">→</span></button>
                         </div>
-                        <div class="card-footer">
-                            <span class="badge badge-agra">Agra</span>
-                            <span class="badge badge-field">Field Staff</span>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Visits -->
+            <section class="page" id="visits">
+                <div class="page-intro">
+                    <div class="page-info">
+                        <h1 class="page-title">Retailer Visit</h1>
+                        <p class="page-desc">Log retailer visits</p>
+                    </div>
+                </div>
+                <div class="cards-grid">
+                    <article class="card" onclick="openForm('visit','Vishal')" style="--i:0">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row"><div class="user-avatar ua1">VI</div><div class="user-info"><h3>Vishal</h3><span>EMP0156</span></div></div>
+                            <button class="action-btn">Log Visit <span class="arrow">→</span></button>
                         </div>
-                        <div class="card-action">
-                            <span>Mark Check In</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
+                    </article>
+                    <article class="card" onclick="openForm('visit','Shailendra')" style="--i:1">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row"><div class="user-avatar ua2">SH</div><div class="user-info"><h3>Shailendra</h3><span>EMP0159</span></div></div>
+                            <button class="action-btn">Log Visit <span class="arrow">→</span></button>
                         </div>
+                    </article>
+                    <article class="card" onclick="openForm('visit','Sanjeev')" style="--i:2">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row"><div class="user-avatar ua3">SA</div><div class="user-info"><h3>Sanjeev</h3><span>EMP005</span></div></div>
+                            <button class="action-btn">Log Visit <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+                    <article class="card" onclick="openForm('visit','EMP0263')" style="--i:3">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row"><div class="user-avatar ua5">A3</div><div class="user-info"><h3>Agra Employee</h3><span>EMP0263</span></div></div>
+                            <button class="action-btn">Log Visit <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+                    <article class="card" onclick="openForm('visit','EMP0264')" style="--i:4">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row"><div class="user-avatar ua6">A4</div><div class="user-info"><h3>Agra Employee</h3><span>EMP0264</span></div></div>
+                            <button class="action-btn">Log Visit <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Payments -->
+            <section class="page" id="payments">
+                <div class="page-intro">
+                    <div class="page-info">
+                        <h1 class="page-title">Payment Collections</h1>
+                        <p class="page-desc">Cash & online payments</p>
+                    </div>
+                </div>
+                <div class="tabs-row">
+                    <button class="tab-pill active" onclick="switchTab('payEtawah',this)">Etawah</button>
+                    <button class="tab-pill" onclick="switchTab('payAgra',this)">Agra</button>
+                </div>
+                <div class="tab-pane active" id="payEtawah">
+                    <div class="cards-grid small-grid">
+                        <article class="card pay-card cash" onclick="openForm('cashPayment','Cash Collection')" style="--i:0">
+                            <div class="pay-icon">₹</div>
+                            <div class="pay-info"><strong>Cash Collection</strong><span>Etawah Branch</span></div>
+                        </article>
+                        <article class="card pay-card digital" onclick="openForm('onlinePayment','Vishal Online')" style="--i:1">
+                            <div class="pay-icon">◇</div>
+                            <div class="pay-info"><strong>Vishal Online</strong><span>EMP0156</span></div>
+                        </article>
+                        <article class="card pay-card digital" onclick="openForm('onlinePayment','Shailendra Online')" style="--i:2">
+                            <div class="pay-icon">◇</div>
+                            <div class="pay-info"><strong>Shailendra Online</strong><span>EMP0159</span></div>
+                        </article>
+                        <article class="card pay-card digital" onclick="openForm('onlinePayment','Sanjeev Online')" style="--i:3">
+                            <div class="pay-icon">◇</div>
+                            <div class="pay-info"><strong>Sanjeev Online</strong><span>EMP005</span></div>
+                        </article>
+                        <article class="card pay-card digital" onclick="openForm('onlinePayment','Showroom')" style="--i:4">
+                            <div class="pay-icon">◇</div>
+                            <div class="pay-info"><strong>Showroom Online</strong><span>Etawah</span></div>
+                        </article>
+                    </div>
+                </div>
+                <div class="tab-pane" id="payAgra">
+                    <div class="cards-grid small-grid">
+                        <article class="card pay-card cash" onclick="openForm('cashPayment','Warehouse Cash')" style="--i:0">
+                            <div class="pay-icon">₹</div>
+                            <div class="pay-info"><strong>Warehouse Cash</strong><span>Agra</span></div>
+                        </article>
+                        <article class="card pay-card digital" onclick="openForm('onlinePayment','Warehouse Online')" style="--i:1">
+                            <div class="pay-icon">◇</div>
+                            <div class="pay-info"><strong>Warehouse Online</strong><span>Agra</span></div>
+                        </article>
+                        <article class="card pay-card cash" onclick="openForm('cashPayment','EMP0263 Cash')" style="--i:2">
+                            <div class="pay-icon">₹</div>
+                            <div class="pay-info"><strong>EMP0263 Cash</strong><span>Field</span></div>
+                        </article>
+                        <article class="card pay-card digital" onclick="openForm('onlinePayment','EMP0263 Online')" style="--i:3">
+                            <div class="pay-icon">◇</div>
+                            <div class="pay-info"><strong>EMP0263 Online</strong><span>Field</span></div>
+                        </article>
+                        <article class="card pay-card cash" onclick="openForm('cashPayment','EMP0264 Cash')" style="--i:4">
+                            <div class="pay-icon">₹</div>
+                            <div class="pay-info"><strong>EMP0264 Cash</strong><span>Field</span></div>
+                        </article>
+                        <article class="card pay-card digital" onclick="openForm('onlinePayment','EMP0264 Online')" style="--i:5">
+                            <div class="pay-icon">◇</div>
+                            <div class="pay-info"><strong>EMP0264 Online</strong><span>Field</span></div>
+                        </article>
                     </div>
                 </div>
             </section>
 
-            <!-- Check Out Section -->
-            <section id="checkout-section" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2 class="section-title">Employee Check Out</h2>
-                        <p class="section-subtitle">Select employee to mark attendance check-out</p>
+            <!-- E-Commerce -->
+            <section class="page" id="ecommerce">
+                <div class="page-intro">
+                    <div class="page-info">
+                        <h1 class="page-title">E-Commerce</h1>
+                        <p class="page-desc">Shipping & Returns</p>
                     </div>
                 </div>
-
-                <div class="employees-grid">
-                    <div class="employee-card" onclick="openForm('checkout', 'Vishal - EMP0156 - Check Out')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"><span>VI</span></div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Vishal</h3>
-                                <span class="employee-code">EMP0156</span>
+                <div class="cards-grid">
+                    <article class="card ecom-card" style="--i:0">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row"><div class="user-avatar ua4">RI</div><div class="user-info"><h3>Ritik</h3><span>EMPECOM02</span></div></div>
+                            <div class="ecom-actions">
+                                <button class="btn-ship" onclick="openForm('packageshipped','Ritik - Shipped')">📦 Shipped</button>
+                                <button class="btn-return" onclick="openForm('returnreceived','Ritik - Return')">↩️ Return</button>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <span class="badge badge-etawah">Etawah</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Mark Check Out</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="employee-card" onclick="openForm('checkout', 'Shailendra - EMP0159 - Check Out')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #ec4899, #f43f5e);"><span>SH</span></div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Shailendra</h3>
-                                <span class="employee-code">EMP0159</span>
+                    </article>
+                    <article class="card ecom-card" style="--i:1">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row"><div class="user-avatar ua7">RS</div><div class="user-info"><h3>Rishabh</h3><span>OWN</span></div></div>
+                            <div class="ecom-actions">
+                                <button class="btn-ship" onclick="openForm('packageshipped','Rishabh - Shipped')">📦 Shipped</button>
+                                <button class="btn-return" onclick="openForm('returnreceived','Rishabh - Return')">↩️ Return</button>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <span class="badge badge-etawah">Etawah</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Mark Check Out</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="employee-card" onclick="openForm('checkout', 'Sanjeev - EMP005 - Check Out')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);"><span>SA</span></div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Sanjeev</h3>
-                                <span class="employee-code">EMP005</span>
+                    </article>
+                    <article class="card ecom-card" style="--i:2">
+                        <div class="card-shine"></div>
+                        <div class="card-body">
+                            <div class="user-row"><div class="user-avatar ua3">MA</div><div class="user-info"><h3>Mayank</h3><span>OWN</span></div></div>
+                            <div class="ecom-actions">
+                                <button class="btn-ship" onclick="openForm('packageshipped','Mayank - Shipped')">📦 Shipped</button>
+                                <button class="btn-return" onclick="openForm('returnreceived','Mayank - Return')">↩️ Return</button>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <span class="badge badge-etawah">Etawah</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Mark Check Out</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="employee-card" onclick="openForm('checkout', 'Ritik - EMPECOM02 - Check Out')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #10b981, #059669);"><span>RI</span></div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Ritik</h3>
-                                <span class="employee-code">EMPECOM02</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="badge badge-etawah">Etawah</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Mark Check Out</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="employee-card" onclick="openForm('checkout', 'EMP0263 - Check Out')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><span>A3</span></div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Agra Employee</h3>
-                                <span class="employee-code">EMP0263</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="badge badge-agra">Agra</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Mark Check Out</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="employee-card" onclick="openForm('checkout', 'EMP0264 - Check Out')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #ef4444, #dc2626);"><span>A4</span></div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Agra Employee</h3>
-                                <span class="employee-code">EMP0264</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="badge badge-agra">Agra</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Mark Check Out</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
+                    </article>
                 </div>
             </section>
 
-            <!-- Retailer Visit Section -->
-            <section id="retailer-section" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2 class="section-title">Retailer Visit Tracking</h2>
-                        <p class="section-subtitle">Log retailer visits and counter check-ins</p>
+            <!-- Catalogue -->
+            <section class="page" id="catalogue">
+                <div class="page-intro">
+                    <div class="page-info">
+                        <h1 class="page-title">Catalogues</h1>
+                        <p class="page-desc">Product catalogues</p>
                     </div>
                 </div>
-
-                <div class="employees-grid">
-                    <div class="employee-card" onclick="openForm('visit', 'Vishal - EMP0156 - Retailer Visit')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"><span>VI</span></div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Vishal</h3>
-                                <span class="employee-code">EMP0156</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="badge badge-etawah">Etawah</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Log Visit</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="employee-card" onclick="openForm('visit', 'Shailendra - EMP0159 - Retailer Visit')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #ec4899, #f43f5e);"><span>SH</span></div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Shailendra</h3>
-                                <span class="employee-code">EMP0159</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="badge badge-etawah">Etawah</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Log Visit</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="employee-card" onclick="openForm('visit', 'Sanjeev - EMP005 - Retailer Visit')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);"><span>SA</span></div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Sanjeev</h3>
-                                <span class="employee-code">EMP005</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="badge badge-etawah">Etawah</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Log Visit</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="employee-card" onclick="openForm('visit', 'EMP0263 - Retailer Visit')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><span>A3</span></div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Agra Employee</h3>
-                                <span class="employee-code">EMP0263</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="badge badge-agra">Agra</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Log Visit</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="employee-card" onclick="openForm('visit', 'EMP0264 - Retailer Visit')">
-                        <div class="card-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #ef4444, #dc2626);"><span>A4</span></div>
-                            <div class="employee-info">
-                                <h3 class="employee-name">Agra Employee</h3>
-                                <span class="employee-code">EMP0264</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <span class="badge badge-agra">Agra</span>
-                        </div>
-                        <div class="card-action">
-                            <span>Log Visit</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Payments Section -->
-            <section id="payments-section" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2 class="section-title">Payment Collections</h2>
-                        <p class="section-subtitle">Cash and online payment tracking</p>
-                    </div>
-                </div>
-
-                <div class="payment-tabs">
-                    <button class="tab-btn active" onclick="showPaymentTab('etawah')">Etawah Branch</button>
-                    <button class="tab-btn" onclick="showPaymentTab('agra')">Agra Branch</button>
-                </div>
-
-                <div id="etawah-payments" class="payment-content active">
-                    <h3 class="subsection-title">Etawah Collections</h3>
-                    <div class="payment-grid">
-                        <div class="payment-card" onclick="openForm('cashPayment', 'Etawah - Cash Collection')">
-                            <div class="payment-icon">💵</div>
-                            <h4>Cash Collection</h4>
-                            <p>Etawah Branch</p>
-                        </div>
-                        <div class="payment-card" onclick="openForm('onlinePayment', 'Vishal - Online Collection')">
-                            <div class="payment-icon">💳</div>
-                            <h4>Vishal Online</h4>
-                            <p>EMP0156</p>
-                        </div>
-                        <div class="payment-card" onclick="openForm('onlinePayment', 'Shailendra - Online Collection')">
-                            <div class="payment-icon">💳</div>
-                            <h4>Shailendra Online</h4>
-                            <p>EMP0159</p>
-                        </div>
-                        <div class="payment-card" onclick="openForm('onlinePayment', 'Sanjeev - Online Collection')">
-                            <div class="payment-icon">💳</div>
-                            <h4>Sanjeev Online</h4>
-                            <p>EMP005</p>
-                        </div>
-                        <div class="payment-card" onclick="openForm('onlinePayment', 'Showroom - Online Collection')">
-                            <div class="payment-icon">🏪</div>
-                            <h4>Showroom Online</h4>
-                            <p>Etawah Showroom</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="agra-payments" class="payment-content">
-                    <h3 class="subsection-title">Agra Collections</h3>
-                    <div class="payment-grid">
-                        <div class="payment-card" onclick="openForm('cashPayment', 'Warehouse - Cash Collection')">
-                            <div class="payment-icon">🏭</div>
-                            <h4>Warehouse Cash</h4>
-                            <p>Agra Warehouse</p>
-                        </div>
-                        <div class="payment-card" onclick="openForm('onlinePayment', 'Warehouse - Online Collection')">
-                            <div class="payment-icon">📦</div>
-                            <h4>Warehouse Online</h4>
-                            <p>Agra Warehouse</p>
-                        </div>
-                        <div class="payment-card" onclick="openForm('cashPayment', 'EMP0263 - Cash Collection')">
-                            <div class="payment-icon">💵</div>
-                            <h4>EMP0263 Cash</h4>
-                            <p>Field Cash</p>
-                        </div>
-                        <div class="payment-card" onclick="openForm('onlinePayment', 'EMP0263 - Online Collection')">
-                            <div class="payment-icon">💳</div>
-                            <h4>EMP0263 Online</h4>
-                            <p>Field Online</p>
-                        </div>
-                        <div class="payment-card" onclick="openForm('cashPayment', 'EMP0264 - Cash Collection')">
-                            <div class="payment-icon">💵</div>
-                            <h4>EMP0264 Cash</h4>
-                            <p>Field Cash</p>
-                        </div>
-                        <div class="payment-card" onclick="openForm('onlinePayment', 'EMP0264 - Online Collection')">
-                            <div class="payment-icon">💳</div>
-                            <h4>EMP0264 Online</h4>
-                            <p>Field Online</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- E-Commerce Section -->
-            <section id="ecommerce-section" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2 class="section-title">E-Commerce Operations</h2>
-                        <p class="section-subtitle">Package shipments and returns management</p>
-                    </div>
-                </div>
-
-                <div class="ecommerce-grid">
-                    <div class="ecom-card" onclick="openForm('packageshipped', 'Ritik - Package Shipped')">
-                        <div class="ecom-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #10b981, #059669);"><span>RI</span></div>
-                            <div>
-                                <h4>Ritik</h4>
-                                <span>EMPECOM02</span>
-                            </div>
-                        </div>
-                        <div class="ecom-actions">
-                            <button class="ecom-btn">📦 Package Shipped</button>
-                            <button class="ecom-btn" onclick="event.stopPropagation(); openForm('returnreceived', 'Ritik - Return Received');">↩️ Return Received</button>
-                        </div>
-                    </div>
-
-                    <div class="ecom-card" onclick="openForm('packageshipped', 'Rishabh - Package Shipped')">
-                        <div class="ecom-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #a855f7, #7c3aed);"><span>RS</span></div>
-                            <div>
-                                <h4>Rishabh</h4>
-                                <span>OWN</span>
-                            </div>
-                        </div>
-                        <div class="ecom-actions">
-                            <button class="ecom-btn">📦 Package Shipped</button>
-                            <button class="ecom-btn" onclick="event.stopPropagation(); openForm('returnreceived', 'Rishabh - Return Received');">↩️ Return Received</button>
-                        </div>
-                    </div>
-
-                    <div class="ecom-card" onclick="openForm('packageshipped', 'Mayank - Package Shipped')">
-                        <div class="ecom-header">
-                            <div class="employee-avatar" style="background: linear-gradient(135deg, #14b8a6, #0d9488);"><span>MA</span></div>
-                            <div>
-                                <h4>Mayank</h4>
-                                <span>OWN</span>
-                            </div>
-                        </div>
-                        <div class="ecom-actions">
-                            <button class="ecom-btn">📦 Package Shipped</button>
-                            <button class="ecom-btn" onclick="event.stopPropagation(); openForm('returnreceived', 'Mayank - Return Received');">↩️ Return Received</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Catalogue Section -->
-            <section id="catalogue-section" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2 class="section-title">Product Catalogues</h2>
-                        <p class="section-subtitle">Browse and download product catalogues</p>
-                    </div>
-                </div>
-
                 <div class="catalogue-grid">
-                    <div class="catalogue-card" onclick="window.open('https://drive.google.com/drive/folders/1tTWhDCXH4VEuRg8i13zUYKHsqNLbyk28?usp=sharing', '_blank')">
-                        <div class="catalogue-icon">❄️</div>
-                        <h3>Air Cooler Catalogue</h3>
-                        <p>Ranjna · Air Coolers</p>
-                        <div class="catalogue-action">Download →</div>
-                    </div>
-
-                    <div class="catalogue-card" onclick="window.open('https://drive.google.com/drive/folders/1ey79ypJ1uZIDm2gFezIR1QTE_FtL6hKL?usp=sharing', '_blank')">
-                        <div class="catalogue-icon">🔊</div>
-                        <h3>Speaker Catalogue</h3>
-                        <p>Ranjna · Speakers</p>
-                        <div class="catalogue-action">Download →</div>
-                    </div>
-
-                    <div class="catalogue-card" onclick="window.open('https://drive.google.com/drive/folders/1rE1RJFMErGrP4BvTdwaXQ4p5Hxverp6L?usp=drive_link', '_blank')">
-                        <div class="catalogue-icon">🌀</div>
-                        <h3>Fans & Appliances</h3>
-                        <p>Ranjna · Fans & Appliances</p>
-                        <div class="catalogue-action">Download →</div>
-                    </div>
-
-                    <div class="catalogue-card" onclick="window.open('https://drive.google.com/drive/folders/1ONXTaQNUIfFq_b-YgjvVTnRHyTZ3gisi?usp=sharing', '_blank')">
-                        <div class="catalogue-icon">💨</div>
-                        <h3>Crompton Fans</h3>
-                        <p>Crompton · Fans</p>
-                        <div class="catalogue-action">Download →</div>
-                    </div>
-
-                    <div class="catalogue-card" onclick="window.open('https://drive.google.com/drive/folders/1PSYhS3dEJg3Ht1SjAqhqjzJQdRWJyBMI?usp=sharing', '_blank')">
-                        <div class="catalogue-icon">💡</div>
-                        <h3>Philips Appliances</h3>
-                        <p>Philips · Home Appliances</p>
-                        <div class="catalogue-action">Download →</div>
-                    </div>
+                    <article class="cat-card cat1" onclick="window.open('https://drive.google.com/drive/folders/1tTWhDCXH4VEuRg8i13zUYKHsqNLbyk28','_blank')" style="--i:0">
+                        <div class="cat-icon">❄️</div>
+                        <div class="cat-info"><h3>Air Coolers</h3><span>Ranjna</span></div>
+                        <div class="cat-arrow">↗</div>
+                    </article>
+                    <article class="cat-card cat2" onclick="window.open('https://drive.google.com/drive/folders/1ey79ypJ1uZIDm2gFezIR1QTE_FtL6hKL','_blank')" style="--i:1">
+                        <div class="cat-icon">🔊</div>
+                        <div class="cat-info"><h3>Speakers</h3><span>Ranjna</span></div>
+                        <div class="cat-arrow">↗</div>
+                    </article>
+                    <article class="cat-card cat3" onclick="window.open('https://drive.google.com/drive/folders/1rE1RJFMErGrP4BvTdwaXQ4p5Hxverp6L','_blank')" style="--i:2">
+                        <div class="cat-icon">🌀</div>
+                        <div class="cat-info"><h3>Fans</h3><span>Ranjna</span></div>
+                        <div class="cat-arrow">↗</div>
+                    </article>
+                    <article class="cat-card cat4" onclick="window.open('https://drive.google.com/drive/folders/1ONXTaQNUIfFq_b-YgjvVTnRHyTZ3gisi','_blank')" style="--i:3">
+                        <div class="cat-icon">💨</div>
+                        <div class="cat-info"><h3>Crompton</h3><span>Fans</span></div>
+                        <div class="cat-arrow">↗</div>
+                    </article>
+                    <article class="cat-card cat5" onclick="window.open('https://drive.google.com/drive/folders/1PSYhS3dEJg3Ht1SjAqhqjzJQdRWJyBMI','_blank')" style="--i:4">
+                        <div class="cat-icon">💡</div>
+                        <div class="cat-info"><h3>Philips</h3><span>Appliances</span></div>
+                        <div class="cat-arrow">↗</div>
+                    </article>
                 </div>
             </section>
 
-            <!-- Service Center Complaint Closing Section -->
-            <section id="servicecenter-section" class="content-section">
-                <div class="section-header">
-                    <div>
-                        <h2 class="section-title">Service Center Complaint Closing Form</h2>
-                        <p class="section-subtitle">Choose ASC location to open complaint closing form</p>
+            <!-- Service -->
+            <section class="page" id="service">
+                <div class="page-intro">
+                    <div class="page-info">
+                        <h1 class="page-title">Service Center</h1>
+                        <p class="page-desc">ASC complaint forms</p>
                     </div>
                 </div>
-
                 <div class="service-grid">
-                    <div class="service-card" onclick="openForm('ascEtawah', 'ASC Etawah - Complaint Closing Form')">
+                    <article class="svc-card online" onclick="openForm('ascEtawah','ASC Etawah')" style="--i:0">
+                        <div class="svc-dot"></div>
+                        <div class="svc-emoji">🔧</div>
                         <h3>ASC Etawah</h3>
-                        <p>Service Center Complaint Closing</p>
-                        <span class="service-meta">Open Form</span>
-                    </div>
-
-                    <div class="service-card" onclick="openForm('ascMainpuri', 'ASC Mainpuri - Complaint Closing Form')">
+                        <span class="svc-status">Available</span>
+                    </article>
+                    <article class="svc-card" onclick="openForm('ascMainpuri','ASC Mainpuri')" style="--i:1">
+                        <div class="svc-dot"></div>
+                        <div class="svc-emoji">🔧</div>
                         <h3>ASC Mainpuri</h3>
-                        <p>Service Center Complaint Closing</p>
-                        <span class="service-meta">Open Form</span>
-                    </div>
-
-                    <div class="service-card" onclick="openForm('ascFirozabad', 'ASC Firozabad - Complaint Closing Form')">
+                        <span class="svc-status">Coming Soon</span>
+                    </article>
+                    <article class="svc-card" onclick="openForm('ascFirozabad','ASC Firozabad')" style="--i:2">
+                        <div class="svc-dot"></div>
+                        <div class="svc-emoji">🔧</div>
                         <h3>ASC Firozabad</h3>
-                        <p>Service Center Complaint Closing</p>
-                        <span class="service-meta">Open Form</span>
-                    </div>
-
-                    <div class="service-card" onclick="openForm('ascAgra', 'ASC Agra - Complaint Closing Form')">
+                        <span class="svc-status">Coming Soon</span>
+                    </article>
+                    <article class="svc-card" onclick="openForm('ascAgra','ASC Agra')" style="--i:3">
+                        <div class="svc-dot"></div>
+                        <div class="svc-emoji">🔧</div>
                         <h3>ASC Agra</h3>
-                        <p>Service Center Complaint Closing</p>
-                        <span class="service-meta">Open Form</span>
-                    </div>
+                        <span class="svc-status">Coming Soon</span>
+                    </article>
                 </div>
             </section>
         </main>
     </div>
 
-    <!-- Form Modal -->
-    <div id="form-modal" class="form-modal">
-        <div class="modal-backdrop" onclick="closeFormModal()"></div>
-        <div class="modal-container">
+    <!-- Overlay -->
+    <div id="overlay" onclick="closeMenu()"></div>
+
+    <!-- Modal -->
+    <div id="modal">
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-panel">
             <div class="modal-header">
-                <h3 id="modal-title">Loading...</h3>
-                <button class="modal-close" onclick="closeFormModal()">✕</button>
+                <h3 id="modalTitle">Loading...</h3>
+                <button class="modal-close" onclick="closeModal()">
+                    <span></span><span></span>
+                </button>
             </div>
             <div class="modal-body">
-                <div class="modal-loader" id="modal-loader">
-                    <div class="spinner"></div>
+                <div class="form-loader" id="formLoader">
+                    <div class="loader-anim">
+                        <div class="loader-circle"></div>
+                        <div class="loader-circle"></div>
+                        <div class="loader-circle"></div>
+                    </div>
                     <p>Loading form...</p>
                 </div>
-                <iframe id="form-iframe" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation"></iframe>
+                <iframe id="formFrame"></iframe>
             </div>
         </div>
     </div>
