@@ -1,15 +1,22 @@
 // ========================================
-// SHOWA - Next Level Premium Portal
+// SHOWA - Premium Portal with Google Apps Script
 // ========================================
 
+// ⚠️ IMPORTANT: Replace YOUR_APPS_SCRIPT_URL with your actual deployed URL
+// Get URL from: script.google.com → Deploy → Web app URL
+// Example: https://script.google.com/macros/s/AKfycbxXXXXXXXXX/exec
+
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxKGRBlMdgA5WAW0wO98aQsLEucjGkbllI1wtLg-nw-TMA7jwW1gn88DpcdEPe9nzBCHw/exec'; // 👈 UPDATE THIS AFTER DEPLOYING!
+
+// Form URLs Configuration
 const FORMS = {
-    checkin: 'https://forms.zohopublic.in/sy942255gm1/form/MassageIntakeForm/formperma/ueC94qrA8DuPZF5anFYgsSHpXPwCtIvPqDUyVadzFaM?zf_enablecamera=true',
-    visit: 'https://forms.zohopublic.in/sy942255gm1/form/CounterVisitTrackingForm/formperma/bnCAwS8ikFtWgcaGPa67xwJ_XUVQ4QRlbFgtFTHX1VI?zf_enablecamera=true',
-    packageshipped: 'https://forms.zohopublic.in/1839ryluckgm1/form/QRScanOrderForm/formperma/CfiDf62e3sPrqlDURO0xjidLML5i3IMFSuwcMDr7dFQ?zf_enablecamera=true',
-    returnreceived: 'https://forms.zohopublic.in/1839ryluckgm1/form/ReturnECOM/formperma/8s-HW1w7c_H74eoJ6uVHUMJWB7TF3EtkYh7KFLoD2Lk?zf_enablecamera=true',
-    cashPayment: 'https://forms.zohopublic.in/1839ryluckgm1/form/CorporateTeamOutingForm/formperma/3PrB4-JEfMPLSE7By3aTgs8YEvalmCZh4fSqfo7RzWc',
-    onlinePayment: 'https://forms.zohopublic.in/enquiryranjnagm1/form/SimpleOrderForm/formperma/x2sbfz1aRS1ZCgrqU-WI2p_wR23UiA7O7RQMK8iJni0?zf_enablecamera=true',
-    ascEtawah: 'https://forms.zohopublic.in/ranjanaagency123gm1/form/ServiceCenterComplaintForm/formperma/eECIgdBkfx4l1MDAZh_4riGc4BC27wbH-scue6oPibY',
+    checkin: APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL' ? `${APPS_SCRIPT_URL}?form=checkin&emp=` : null,
+    visit: APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL' ? `${APPS_SCRIPT_URL}?form=visit&emp=` : null,
+    packageshipped: APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL' ? `${APPS_SCRIPT_URL}?form=packageshipped&emp=` : null,
+    returnreceived: APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL' ? `${APPS_SCRIPT_URL}?form=returnreceived&emp=` : null,
+    cashPayment: APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL' ? `${APPS_SCRIPT_URL}?form=cashPayment&emp=` : null,
+    onlinePayment: APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL' ? `${APPS_SCRIPT_URL}?form=onlinePayment&emp=` : null,
+    ascEtawah: APPS_SCRIPT_URL !== 'YOUR_APPS_SCRIPT_URL' ? `${APPS_SCRIPT_URL}?form=ascEtawah` : null,
     ascMainpuri: null,
     ascFirozabad: null,
     ascAgra: null
@@ -18,11 +25,11 @@ const FORMS = {
 const PERMISSIONS = {
     checkin: 'geolocation; camera;',
     visit: 'geolocation; camera;',
-    packageshipped: 'camera;',
-    returnreceived: 'camera;',
-    cashPayment: '',
-    onlinePayment: 'camera;',
-    ascEtawah: '',
+    packageshipped: 'geolocation; camera;',
+    returnreceived: 'geolocation; camera;',
+    cashPayment: 'geolocation;',
+    onlinePayment: 'geolocation; camera;',
+    ascEtawah: 'geolocation;',
     ascMainpuri: '',
     ascFirozabad: '',
     ascAgra: ''
@@ -173,14 +180,52 @@ function openForm(type, title) {
     const link = FORMS[type];
 
     if (!link) {
-        loader.innerHTML = `
-            <div style="text-align:center;padding:2rem">
-                <div style="font-size:5rem;margin-bottom:1.5rem;animation:float 3s ease-in-out infinite">🚧</div>
-                <h3 style="font-size:1.75rem;font-weight:700;margin-bottom:.75rem;background:linear-gradient(135deg,#fff,#ff3366);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Coming Soon</h3>
-                <p style="color:rgba(255,255,255,.5);font-size:1rem">This form will be available shortly.</p>
-            </div>
-            <style>@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}</style>
-        `;
+        // Check if it's because Apps Script is not configured
+        if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL') {
+            loader.innerHTML = `
+                <div style="text-align:center;padding:2.5rem 1.5rem;max-width:500px;margin:0 auto">
+                    <div style="font-size:4rem;margin-bottom:1.5rem">⚙️</div>
+                    <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:1rem;color:#ff3366">
+                        Setup Required
+                    </h3>
+                    <p style="color:rgba(255,255,255,.8);margin-bottom:1.5rem;line-height:1.6">
+                        Google Apps Script deployment pending
+                    </p>
+                    <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+                                border-radius:12px;padding:1.5rem;text-align:left;margin-bottom:1.5rem">
+                        <p style="color:rgba(255,255,255,.6);font-size:0.9rem;margin-bottom:1rem;font-weight:600">
+                            📋 Quick Setup Steps:
+                        </p>
+                        <ol style="color:rgba(255,255,255,.7);font-size:0.85rem;line-height:2;margin:0;padding-left:1.5rem">
+                            <li>Go to <strong style="color:#10b981">script.google.com</strong></li>
+                            <li>Create new project: "Showa Forms"</li>
+                            <li>Copy Code.gs & FormTemplate.html</li>
+                            <li>Update CONFIG with Sheet IDs</li>
+                            <li>Deploy as Web App (Anyone access)</li>
+                            <li>Copy Web App URL</li>
+                            <li>Update script.js line 10</li>
+                        </ol>
+                    </div>
+                    <a href="apps-script/SETUP_GUIDE.md" target="_blank"
+                       style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;
+                              background:linear-gradient(135deg,#10b981,#059669);color:#fff;
+                              text-decoration:none;border-radius:12px;font-weight:600;font-size:0.95rem;
+                              box-shadow:0 8px 20px rgba(16,185,129,.3);transition:all .3s ease">
+                        📖 View Setup Guide
+                    </a>
+                </div>
+            `;
+        } else {
+            // Coming soon message for future forms
+            loader.innerHTML = `
+                <div style="text-align:center;padding:2rem">
+                    <div style="font-size:5rem;margin-bottom:1.5rem;animation:float 3s ease-in-out infinite">🚧</div>
+                    <h3 style="font-size:1.75rem;font-weight:700;margin-bottom:.75rem;background:linear-gradient(135deg,#fff,#ff3366);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Coming Soon</h3>
+                    <p style="color:rgba(255,255,255,.5);font-size:1rem">This form will be available shortly.</p>
+                </div>
+                <style>@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}</style>
+            `;
+        }
         return;
     }
 
@@ -193,7 +238,8 @@ function openForm(type, title) {
         }, 400);
     };
 
-    frame.src = link;
+    // Build URL with employee name
+    frame.src = link + encodeURIComponent(title);
 
     // Fallback
     setTimeout(() => {
@@ -203,7 +249,7 @@ function openForm(type, title) {
                     <div style="font-size:4rem;margin-bottom:1.5rem">🔗</div>
                     <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:.5rem">Open in Browser</h3>
                     <p style="color:rgba(255,255,255,.5);margin-bottom:2rem">Form couldn't load here</p>
-                    <a href="${link}" target="_blank" rel="noopener"
+                    <a href="${link + encodeURIComponent(title)}" target="_blank" rel="noopener"
                        style="display:inline-flex;align-items:center;gap:12px;padding:16px 32px;
                               background:linear-gradient(135deg,#ff3366,#8b5cf6);color:#fff;
                               text-decoration:none;border-radius:14px;font-weight:600;font-size:1rem;
@@ -238,6 +284,13 @@ document.addEventListener('keydown', e => {
     }
 });
 
+// Listen for form submission complete message from iframe
+window.addEventListener('message', (event) => {
+    if (event.data === 'formSubmitted') {
+        setTimeout(closeModal, 1000);
+    }
+});
+
 // Console branding
 console.log(
     '%c SHOWA ',
@@ -247,3 +300,19 @@ console.log(
     '%c Ranjna Agencies Private Limited ',
     'color:rgba(255,255,255,.5);font-size:14px'
 );
+console.log(
+    '%c 📍 High-Accuracy GPS | 📸 Camera | ♾️ Unlimited Responses ',
+    'color:#10b981;font-size:12px;font-weight:600'
+);
+
+// Configuration check on load
+if (APPS_SCRIPT_URL === 'YOUR_APPS_SCRIPT_URL') {
+    console.log(
+        '%c ⚠️ SETUP REQUIRED ',
+        'background:#ff3366;color:#fff;font-size:14px;font-weight:bold;padding:8px 16px;border-radius:8px'
+    );
+    console.log(
+        '%c Deploy Google Apps Script and update APPS_SCRIPT_URL in script.js\nSee: apps-script/SETUP_GUIDE.md ',
+        'color:#ff3366;font-size:12px;margin-top:8px'
+    );
+}
