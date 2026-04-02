@@ -6,7 +6,8 @@ const FORMS = {
     visit: APPS_SCRIPT_URL + '?form=visit',
     payment: APPS_SCRIPT_URL + '?form=payment',
     ecommerce: APPS_SCRIPT_URL + '?form=ecommerce',
-    petrol: APPS_SCRIPT_URL + '?form=petrol'
+    petrol: APPS_SCRIPT_URL + '?form=petrol',
+    service: APPS_SCRIPT_URL + '?form=service'
 };
 
 const PERMISSIONS = {
@@ -14,7 +15,8 @@ const PERMISSIONS = {
     visit: 'camera *; geolocation *; microphone *',
     payment: 'camera *; geolocation *; microphone *',
     ecommerce: 'camera *; geolocation *; microphone *',
-    petrol: 'camera *; geolocation *; microphone *'
+    petrol: 'camera *; geolocation *; microphone *',
+    service: 'camera *; geolocation *; microphone *'
 };
 
 // SPLASH SCREEN - BULLETPROOF
@@ -147,8 +149,8 @@ function openForm(type, title) {
         }, 400);
     };
 
-    // For attendance, visit, payment, ecommerce, and petrol forms (no employee parameter needed - they have internal dropdowns)
-    if (type === 'attendance' || type === 'visit' || type === 'payment' || type === 'ecommerce' || type === 'petrol') {
+    // For attendance, visit, payment, ecommerce, petrol, and service forms (no employee parameter needed - they have internal dropdowns)
+    if (type === 'attendance' || type === 'visit' || type === 'payment' || type === 'ecommerce' || type === 'petrol' || type === 'service') {
         frame.src = link;
         var u = link;
     } else {
