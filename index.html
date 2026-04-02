@@ -83,9 +83,9 @@
                 <span class="btn-icon">📦</span>
                 <span class="btn-text">E-Com</span>
             </button>
-            <button class="nav-btn" data-page="catalogue" onclick="switchPage('catalogue')">
-                <span class="btn-icon">📚</span>
-                <span class="btn-text">Catalogue</span>
+            <button class="nav-btn" data-page="petrol" onclick="switchPage('petrol')">
+                <span class="btn-icon">⛽</span>
+                <span class="btn-text">Petrol</span>
             </button>
             <button class="nav-btn" data-page="service" onclick="switchPage('service')">
                 <span class="btn-icon">🔧</span>
@@ -126,9 +126,9 @@
                     <span class="nav-text">E-Commerce</span>
                     <div class="nav-active-bg"></div>
                 </a>
-                <a href="javascript:void(0)" class="nav-link" data-page="catalogue">
-                    <div class="nav-icon"><span>📚</span></div>
-                    <span class="nav-text">Catalogue</span>
+                <a href="javascript:void(0)" class="nav-link" data-page="petrol">
+                    <div class="nav-icon"><span>⛽</span></div>
+                    <span class="nav-text">Petrol Receipts</span>
                     <div class="nav-active-bg"></div>
                 </a>
                 <a href="javascript:void(0)" class="nav-link" data-page="service">
@@ -152,118 +152,43 @@
             <section class="page active" id="attendance">
                 <div class="page-intro">
                     <div class="page-info">
-                        <h1 class="page-title">Employee Check In</h1>
-                        <p class="page-desc">Mark attendance for field employees</p>
+                        <h1 class="page-title">Employee Attendance</h1>
+                        <p class="page-desc">Mark attendance with check-in/check-out</p>
                     </div>
                     <div class="live-clock" id="mainClock"></div>
                 </div>
 
                 <div class="cards-grid">
-                    <article class="card" onclick="openForm('checkin','Vishal')" style="--i:0">
+                    <!-- New Unified Attendance Form -->
+                    <article class="card attendance-main" onclick="openForm('attendance','Employee Attendance')" style="--i:0; grid-column: 1 / -1;">
                         <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row">
-                                <div class="user-avatar ua1">VI</div>
-                                <div class="user-info">
-                                    <h3>Vishal</h3>
-                                    <span>EMP0156</span>
+                        <div class="card-body" style="padding:2rem;">
+                            <div class="attendance-header" style="text-align:center;margin-bottom:1.5rem;">
+                                <div class="attendance-icon" style="font-size:4rem;margin-bottom:1rem;">📋</div>
+                                <h2 style="font-size:1.8rem;font-weight:700;margin-bottom:0.5rem;">Mark Attendance</h2>
+                                <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;">Check-in or Check-out for all employees</p>
+                            </div>
+                            <div class="attendance-features" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:1.5rem;">
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">👤</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Employee Select</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">🟢</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Check In/Out</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">📍</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Auto Location</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">📝</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Add Remarks</div>
                                 </div>
                             </div>
-                            <div class="user-tags">
-                                <span class="tag tag-blue">Etawah</span>
-                                <span class="tag tag-amber">Field</span>
-                            </div>
-                            <button class="action-btn">Check In <span class="arrow">→</span></button>
-                        </div>
-                    </article>
-
-                    <article class="card" onclick="openForm('checkin','Shailendra')" style="--i:1">
-                        <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row">
-                                <div class="user-avatar ua2">SH</div>
-                                <div class="user-info">
-                                    <h3>Shailendra</h3>
-                                    <span>EMP0159</span>
-                                </div>
-                            </div>
-                            <div class="user-tags">
-                                <span class="tag tag-blue">Etawah</span>
-                                <span class="tag tag-amber">Field</span>
-                            </div>
-                            <button class="action-btn">Check In <span class="arrow">→</span></button>
-                        </div>
-                    </article>
-
-                    <article class="card" onclick="openForm('checkin','Sanjeev')" style="--i:2">
-                        <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row">
-                                <div class="user-avatar ua3">SA</div>
-                                <div class="user-info">
-                                    <h3>Sanjeev</h3>
-                                    <span>EMP005</span>
-                                </div>
-                            </div>
-                            <div class="user-tags">
-                                <span class="tag tag-blue">Etawah</span>
-                                <span class="tag tag-amber">Field</span>
-                            </div>
-                            <button class="action-btn">Check In <span class="arrow">→</span></button>
-                        </div>
-                    </article>
-
-                    <article class="card" onclick="openForm('checkin','Ritik')" style="--i:3">
-                        <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row">
-                                <div class="user-avatar ua4">RI</div>
-                                <div class="user-info">
-                                    <h3>Ritik</h3>
-                                    <span>EMPECOM02</span>
-                                </div>
-                            </div>
-                            <div class="user-tags">
-                                <span class="tag tag-blue">Etawah</span>
-                                <span class="tag tag-rose">E-Com</span>
-                            </div>
-                            <button class="action-btn">Check In <span class="arrow">→</span></button>
-                        </div>
-                    </article>
-
-                    <article class="card" onclick="openForm('checkin','EMP0263')" style="--i:4">
-                        <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row">
-                                <div class="user-avatar ua5">A3</div>
-                                <div class="user-info">
-                                    <h3>Agra Employee</h3>
-                                    <span>EMP0263</span>
-                                </div>
-                            </div>
-                            <div class="user-tags">
-                                <span class="tag tag-emerald">Agra</span>
-                                <span class="tag tag-amber">Field</span>
-                            </div>
-                            <button class="action-btn">Check In <span class="arrow">→</span></button>
-                        </div>
-                    </article>
-
-                    <article class="card" onclick="openForm('checkin','EMP0264')" style="--i:5">
-                        <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row">
-                                <div class="user-avatar ua6">A4</div>
-                                <div class="user-info">
-                                    <h3>Agra Employee</h3>
-                                    <span>EMP0264</span>
-                                </div>
-                            </div>
-                            <div class="user-tags">
-                                <span class="tag tag-emerald">Agra</span>
-                                <span class="tag tag-amber">Field</span>
-                            </div>
-                            <button class="action-btn">Check In <span class="arrow">→</span></button>
+                            <button class="action-btn" style="width:100%;padding:1.25rem;font-size:1.1rem;background:linear-gradient(135deg,#0fb9b1,#22d3ee);border:none;border-radius:16px;color:#fff;font-weight:700;cursor:pointer;">
+                                Open Attendance Form <span class="arrow" style="font-size:1.3rem;">→</span>
+                            </button>
                         </div>
                     </article>
                 </div>
@@ -274,43 +199,41 @@
                 <div class="page-intro">
                     <div class="page-info">
                         <h1 class="page-title">Retailer Visit</h1>
-                        <p class="page-desc">Log retailer visits</p>
+                        <p class="page-desc">Log retailer visits with location and photos</p>
                     </div>
                 </div>
+
                 <div class="cards-grid">
-                    <article class="card" onclick="openForm('visit','Vishal')" style="--i:0">
+                    <!-- New Unified Retailer Visit Form -->
+                    <article class="card visit-main" onclick="openForm('visit','Retailer Visit Form')" style="--i:0; grid-column: 1 / -1;">
                         <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row"><div class="user-avatar ua1">VI</div><div class="user-info"><h3>Vishal</h3><span>EMP0156</span></div></div>
-                            <button class="action-btn">Log Visit <span class="arrow">→</span></button>
-                        </div>
-                    </article>
-                    <article class="card" onclick="openForm('visit','Shailendra')" style="--i:1">
-                        <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row"><div class="user-avatar ua2">SH</div><div class="user-info"><h3>Shailendra</h3><span>EMP0159</span></div></div>
-                            <button class="action-btn">Log Visit <span class="arrow">→</span></button>
-                        </div>
-                    </article>
-                    <article class="card" onclick="openForm('visit','Sanjeev')" style="--i:2">
-                        <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row"><div class="user-avatar ua3">SA</div><div class="user-info"><h3>Sanjeev</h3><span>EMP005</span></div></div>
-                            <button class="action-btn">Log Visit <span class="arrow">→</span></button>
-                        </div>
-                    </article>
-                    <article class="card" onclick="openForm('visit','EMP0263')" style="--i:3">
-                        <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row"><div class="user-avatar ua5">A3</div><div class="user-info"><h3>Agra Employee</h3><span>EMP0263</span></div></div>
-                            <button class="action-btn">Log Visit <span class="arrow">→</span></button>
-                        </div>
-                    </article>
-                    <article class="card" onclick="openForm('visit','EMP0264')" style="--i:4">
-                        <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row"><div class="user-avatar ua6">A4</div><div class="user-info"><h3>Agra Employee</h3><span>EMP0264</span></div></div>
-                            <button class="action-btn">Log Visit <span class="arrow">→</span></button>
+                        <div class="card-body" style="padding:2rem;">
+                            <div class="visit-header" style="text-align:center;margin-bottom:1.5rem;">
+                                <div class="visit-icon" style="font-size:4rem;margin-bottom:1rem;">📍</div>
+                                <h2 style="font-size:1.8rem;font-weight:700;margin-bottom:0.5rem;">Log Retailer Visit</h2>
+                                <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;">Record retailer visits for all employees</p>
+                            </div>
+                            <div class="visit-features" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:1.5rem;">
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">👤</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Employee Select</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">🏪</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Retailer Info</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">📍</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Auto Location</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">📷</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Photo Upload</div>
+                                </div>
+                            </div>
+                            <button class="action-btn" style="width:100%;padding:1.25rem;font-size:1.1rem;background:linear-gradient(135deg,#f59e0b,#f97316);border:none;border-radius:16px;color:#fff;font-weight:700;cursor:pointer;">
+                                Open Visit Form <span class="arrow" style="font-size:1.3rem;">→</span>
+                            </button>
                         </div>
                     </article>
                 </div>
@@ -321,64 +244,43 @@
                 <div class="page-intro">
                     <div class="page-info">
                         <h1 class="page-title">Payment Collections</h1>
-                        <p class="page-desc">Cash & online payments</p>
+                        <p class="page-desc">Record cash & online payment collections</p>
                     </div>
                 </div>
-                <div class="tabs-row">
-                    <button class="tab-pill active" onclick="switchTab('payEtawah',this)">Etawah</button>
-                    <button class="tab-pill" onclick="switchTab('payAgra',this)">Agra</button>
-                </div>
-                <div class="tab-pane active" id="payEtawah">
-                    <div class="cards-grid small-grid">
-                        <article class="card pay-card cash" onclick="openForm('cashPayment','Cash Collection')" style="--i:0">
-                            <div class="pay-icon">₹</div>
-                            <div class="pay-info"><strong>Cash Collection</strong><span>Etawah Branch</span></div>
-                        </article>
-                        <article class="card pay-card digital" onclick="openForm('onlinePayment','Vishal Online')" style="--i:1">
-                            <div class="pay-icon">◇</div>
-                            <div class="pay-info"><strong>Vishal Online</strong><span>EMP0156</span></div>
-                        </article>
-                        <article class="card pay-card digital" onclick="openForm('onlinePayment','Shailendra Online')" style="--i:2">
-                            <div class="pay-icon">◇</div>
-                            <div class="pay-info"><strong>Shailendra Online</strong><span>EMP0159</span></div>
-                        </article>
-                        <article class="card pay-card digital" onclick="openForm('onlinePayment','Sanjeev Online')" style="--i:3">
-                            <div class="pay-icon">◇</div>
-                            <div class="pay-info"><strong>Sanjeev Online</strong><span>EMP005</span></div>
-                        </article>
-                        <article class="card pay-card digital" onclick="openForm('onlinePayment','Showroom')" style="--i:4">
-                            <div class="pay-icon">◇</div>
-                            <div class="pay-info"><strong>Showroom Online</strong><span>Etawah</span></div>
-                        </article>
-                    </div>
-                </div>
-                <div class="tab-pane" id="payAgra">
-                    <div class="cards-grid small-grid">
-                        <article class="card pay-card cash" onclick="openForm('cashPayment','Warehouse Cash')" style="--i:0">
-                            <div class="pay-icon">₹</div>
-                            <div class="pay-info"><strong>Warehouse Cash</strong><span>Agra</span></div>
-                        </article>
-                        <article class="card pay-card digital" onclick="openForm('onlinePayment','Warehouse Online')" style="--i:1">
-                            <div class="pay-icon">◇</div>
-                            <div class="pay-info"><strong>Warehouse Online</strong><span>Agra</span></div>
-                        </article>
-                        <article class="card pay-card cash" onclick="openForm('cashPayment','EMP0263 Cash')" style="--i:2">
-                            <div class="pay-icon">₹</div>
-                            <div class="pay-info"><strong>EMP0263 Cash</strong><span>Field</span></div>
-                        </article>
-                        <article class="card pay-card digital" onclick="openForm('onlinePayment','EMP0263 Online')" style="--i:3">
-                            <div class="pay-icon">◇</div>
-                            <div class="pay-info"><strong>EMP0263 Online</strong><span>Field</span></div>
-                        </article>
-                        <article class="card pay-card cash" onclick="openForm('cashPayment','EMP0264 Cash')" style="--i:4">
-                            <div class="pay-icon">₹</div>
-                            <div class="pay-info"><strong>EMP0264 Cash</strong><span>Field</span></div>
-                        </article>
-                        <article class="card pay-card digital" onclick="openForm('onlinePayment','EMP0264 Online')" style="--i:5">
-                            <div class="pay-icon">◇</div>
-                            <div class="pay-info"><strong>EMP0264 Online</strong><span>Field</span></div>
-                        </article>
-                    </div>
+
+                <div class="cards-grid">
+                    <!-- New Unified Payment Collection Form -->
+                    <article class="card payment-main" onclick="openForm('payment','Payment Collection Form')" style="--i:0; grid-column: 1 / -1;">
+                        <div class="card-shine"></div>
+                        <div class="card-body" style="padding:2rem;">
+                            <div class="payment-header" style="text-align:center;margin-bottom:1.5rem;">
+                                <div class="payment-icon" style="font-size:4rem;margin-bottom:1rem;">💰</div>
+                                <h2 style="font-size:1.8rem;font-weight:700;margin-bottom:0.5rem;">Record Payment Collection</h2>
+                                <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;">Log cash and online payment collections for all branches</p>
+                            </div>
+                            <div class="payment-features" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:1.5rem;">
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">💳</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Payment Type</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">🏢</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Branch Select</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">🏪</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Firm Details</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">📸</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Transaction Photo</div>
+                                </div>
+                            </div>
+                            <button class="action-btn" style="width:100%;padding:1.25rem;font-size:1.1rem;background:linear-gradient(135deg,#059669,#10b981);border:none;border-radius:16px;color:#fff;font-weight:700;cursor:pointer;">
+                                Open Payment Form <span class="arrow" style="font-size:1.3rem;">→</span>
+                            </button>
+                        </div>
+                    </article>
                 </div>
             </section>
 
@@ -386,77 +288,86 @@
             <section class="page" id="ecommerce">
                 <div class="page-intro">
                     <div class="page-info">
-                        <h1 class="page-title">E-Commerce</h1>
-                        <p class="page-desc">Shipping & Returns</p>
+                        <h1 class="page-title">E-commerce Operations</h1>
+                        <p class="page-desc">Manage shipping, returns & order tracking</p>
                     </div>
                 </div>
                 <div class="cards-grid">
-                    <article class="card ecom-card" style="--i:0">
+                    <!-- New Unified E-commerce Operations Form -->
+                    <article class="card ecommerce-main" onclick="openForm('ecommerce','E-commerce Operations Form')" style="--i:0; grid-column: 1 / -1;">
                         <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row"><div class="user-avatar ua4">RI</div><div class="user-info"><h3>Ritik</h3><span>EMPECOM02</span></div></div>
-                            <div class="ecom-actions">
-                                <button class="btn-ship" onclick="openForm('packageshipped','Ritik - Shipped')">📦 Shipped</button>
-                                <button class="btn-return" onclick="openForm('returnreceived','Ritik - Return')">↩️ Return</button>
+                        <div class="card-body" style="padding:2rem;">
+                            <div class="ecommerce-header" style="text-align:center;margin-bottom:1.5rem;">
+                                <div class="ecommerce-icon" style="font-size:4rem;margin-bottom:1rem;">📦</div>
+                                <h2 style="font-size:1.8rem;font-weight:700;margin-bottom:0.5rem;">E-commerce Operations</h2>
+                                <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;">Manage shipping, returns & order tracking</p>
                             </div>
-                        </div>
-                    </article>
-                    <article class="card ecom-card" style="--i:1">
-                        <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row"><div class="user-avatar ua7">RS</div><div class="user-info"><h3>Rishabh</h3><span>OWN</span></div></div>
-                            <div class="ecom-actions">
-                                <button class="btn-ship" onclick="openForm('packageshipped','Rishabh - Shipped')">📦 Shipped</button>
-                                <button class="btn-return" onclick="openForm('returnreceived','Rishabh - Return')">↩️ Return</button>
+                            <div class="ecommerce-features" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:1.5rem;">
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">📊</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Status Tracking</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">🔢</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Order & AWB</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">💰</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Loss Tracking</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">📷</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Label Photos</div>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                    <article class="card ecom-card" style="--i:2">
-                        <div class="card-shine"></div>
-                        <div class="card-body">
-                            <div class="user-row"><div class="user-avatar ua3">MA</div><div class="user-info"><h3>Mayank</h3><span>OWN</span></div></div>
-                            <div class="ecom-actions">
-                                <button class="btn-ship" onclick="openForm('packageshipped','Mayank - Shipped')">📦 Shipped</button>
-                                <button class="btn-return" onclick="openForm('returnreceived','Mayank - Return')">↩️ Return</button>
-                            </div>
+                            <button class="action-btn" style="width:100%;padding:1.25rem;font-size:1.1rem;background:linear-gradient(135deg,#f97316,#ea580c);border:none;border-radius:16px;color:#fff;font-weight:700;cursor:pointer;">
+                                Open E-commerce Form <span class="arrow" style="font-size:1.3rem;">→</span>
+                            </button>
                         </div>
                     </article>
                 </div>
             </section>
 
-            <!-- Catalogue -->
-            <section class="page" id="catalogue">
+            <!-- Petrol Receipts -->
+            <section class="page" id="petrol">
                 <div class="page-intro">
                     <div class="page-info">
-                        <h1 class="page-title">Catalogues</h1>
-                        <p class="page-desc">Product catalogues</p>
+                        <h1 class="page-title">Petrol Receipts</h1>
+                        <p class="page-desc">Record fuel receipts with meter readings</p>
                     </div>
                 </div>
-                <div class="catalogue-grid">
-                    <article class="cat-card cat1" onclick="window.open('https://drive.google.com/drive/folders/1tTWhDCXH4VEuRg8i13zUYKHsqNLbyk28','_blank')" style="--i:0">
-                        <div class="cat-icon">❄️</div>
-                        <div class="cat-info"><h3>Air Coolers</h3><span>Ranjna</span></div>
-                        <div class="cat-arrow">↗</div>
-                    </article>
-                    <article class="cat-card cat2" onclick="window.open('https://drive.google.com/drive/folders/1ey79ypJ1uZIDm2gFezIR1QTE_FtL6hKL','_blank')" style="--i:1">
-                        <div class="cat-icon">🔊</div>
-                        <div class="cat-info"><h3>Speakers</h3><span>Ranjna</span></div>
-                        <div class="cat-arrow">↗</div>
-                    </article>
-                    <article class="cat-card cat3" onclick="window.open('https://drive.google.com/drive/folders/1rE1RJFMErGrP4BvTdwaXQ4p5Hxverp6L','_blank')" style="--i:2">
-                        <div class="cat-icon">🌀</div>
-                        <div class="cat-info"><h3>Fans</h3><span>Ranjna</span></div>
-                        <div class="cat-arrow">↗</div>
-                    </article>
-                    <article class="cat-card cat4" onclick="window.open('https://drive.google.com/drive/folders/1ONXTaQNUIfFq_b-YgjvVTnRHyTZ3gisi','_blank')" style="--i:3">
-                        <div class="cat-icon">💨</div>
-                        <div class="cat-info"><h3>Crompton</h3><span>Fans</span></div>
-                        <div class="cat-arrow">↗</div>
-                    </article>
-                    <article class="cat-card cat5" onclick="window.open('https://drive.google.com/drive/folders/1PSYhS3dEJg3Ht1SjAqhqjzJQdRWJyBMI','_blank')" style="--i:4">
-                        <div class="cat-icon">💡</div>
-                        <div class="cat-info"><h3>Philips</h3><span>Appliances</span></div>
-                        <div class="cat-arrow">↗</div>
+                <div class="cards-grid">
+                    <!-- New Unified Petrol Receipt Form -->
+                    <article class="card petrol-main" onclick="openForm('petrol','Petrol Receipt Form')" style="--i:0; grid-column: 1 / -1;">
+                        <div class="card-shine"></div>
+                        <div class="card-body" style="padding:2rem;">
+                            <div class="petrol-header" style="text-align:center;margin-bottom:1.5rem;">
+                                <div class="petrol-icon" style="font-size:4rem;margin-bottom:1rem;">⛽</div>
+                                <h2 style="font-size:1.8rem;font-weight:700;margin-bottom:0.5rem;">Record Petrol Receipt</h2>
+                                <p style="color:rgba(255,255,255,0.6);font-size:0.95rem;">Log daily fuel receipts with start/end meter readings</p>
+                            </div>
+                            <div class="petrol-features" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:1.5rem;">
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">👤</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Employee Select</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">🏍️</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Start Meter</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">🏁</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">End Meter</div>
+                                </div>
+                                <div style="text-align:center;padding:1rem;background:rgba(255,255,255,0.03);border-radius:12px;">
+                                    <div style="font-size:1.5rem;margin-bottom:0.5rem;">📄</div>
+                                    <div style="font-size:0.85rem;color:rgba(255,255,255,0.7);">Receipt Photo</div>
+                                </div>
+                            </div>
+                            <button class="action-btn" style="width:100%;padding:1.25rem;font-size:1.1rem;background:linear-gradient(135deg,#dc2626,#ef4444);border:none;border-radius:16px;color:#fff;font-weight:700;cursor:pointer;">
+                                Open Petrol Form <span class="arrow" style="font-size:1.3rem;">→</span>
+                            </button>
+                        </div>
                     </article>
                 </div>
             </section>
@@ -518,7 +429,10 @@
                     </div>
                     <p>Loading form...</p>
                 </div>
-                <iframe id="formFrame"></iframe>
+                <iframe id="formFrame"
+                        allow="camera *; microphone *; geolocation *"
+                        allowfullscreen
+                        loading="eager"></iframe>
             </div>
         </div>
     </div>
