@@ -374,37 +374,45 @@
 
             <!-- Service -->
             <section class="page" id="service">
-                <div class="page-intro">
-                    <div class="page-info">
-                        <h1 class="page-title">Service Center</h1>
-                        <p class="page-desc">ASC complaint forms</p>
+                <div class="service-header" style="text-align:center;margin-bottom:1.5rem;">
+                    <div class="service-icon" style="font-size:4rem;margin-bottom:1rem;">🔧</div>
+                    <h2 style="font-size:1.8rem;font-weight:700;">RANJNA CRM (SERVICE)</h2>
+                    <p style="color:rgba(255,255,255,0.7);font-size:1rem;margin-top:0.5rem;">Complete service management system</p>
+                </div>
+
+                <div class="feature-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem;">
+                    <div class="feature-card" style="background:linear-gradient(135deg,rgba(16,185,129,0.1) 0%,rgba(5,150,105,0.05) 100%);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:1.5rem;">
+                        <div class="feature-icon" style="font-size:2rem;margin-bottom:1rem;">🏛️</div>
+                        <h4 style="margin:0 0 0.5rem 0;font-size:1.1rem;font-weight:600;">Multi-State Coverage</h4>
+                        <p style="margin:0;color:rgba(255,255,255,0.7);font-size:0.9rem;">Support for all Indian states and cities</p>
+                    </div>
+
+                    <div class="feature-card" style="background:linear-gradient(135deg,rgba(59,130,246,0.1) 0%,rgba(37,99,235,0.05) 100%);border:1px solid rgba(59,130,246,0.2);border-radius:12px;padding:1.5rem;">
+                        <div class="feature-icon" style="font-size:2rem;margin-bottom:1rem;">📸</div>
+                        <h4 style="margin:0 0 0.5rem 0;font-size:1.1rem;font-weight:600;">5-Photo Documentation</h4>
+                        <p style="margin:0;color:rgba(255,255,255,0.7);font-size:0.9rem;">Complete visual record of service process</p>
+                    </div>
+
+                    <div class="feature-card" style="background:linear-gradient(135deg,rgba(245,158,11,0.1) 0%,rgba(217,119,6,0.05) 100%);border:1px solid rgba(245,158,11,0.2);border-radius:12px;padding:1.5rem;">
+                        <div class="feature-icon" style="font-size:2rem;margin-bottom:1rem;">📋</div>
+                        <h4 style="margin:0 0 0.5rem 0;font-size:1.1rem;font-weight:600;">Detailed Tracking</h4>
+                        <p style="margin:0;color:rgba(255,255,255,0.7);font-size:0.9rem;">Customer & complaint management</p>
+                    </div>
+
+                    <div class="feature-card" style="background:linear-gradient(135deg,rgba(168,85,247,0.1) 0%,rgba(147,51,234,0.05) 100%);border:1px solid rgba(168,85,247,0.2);border-radius:12px;padding:1.5rem;">
+                        <div class="feature-icon" style="font-size:2rem;margin-bottom:1rem;">📦</div>
+                        <h4 style="margin:0 0 0.5rem 0;font-size:1.1rem;font-weight:600;">Product Models</h4>
+                        <p style="margin:0;color:rgba(255,255,255,0.7);font-size:0.9rem;">12 different product model support</p>
                     </div>
                 </div>
-                <div class="service-grid">
-                    <article class="svc-card online" onclick="openForm('ascEtawah','ASC Etawah')" style="--i:0">
-                        <div class="svc-dot"></div>
-                        <div class="svc-emoji">🔧</div>
-                        <h3>ASC Etawah</h3>
-                        <span class="svc-status">Available</span>
-                    </article>
-                    <article class="svc-card" onclick="openForm('ascMainpuri','ASC Mainpuri')" style="--i:1">
-                        <div class="svc-dot"></div>
-                        <div class="svc-emoji">🔧</div>
-                        <h3>ASC Mainpuri</h3>
-                        <span class="svc-status">Coming Soon</span>
-                    </article>
-                    <article class="svc-card" onclick="openForm('ascFirozabad','ASC Firozabad')" style="--i:2">
-                        <div class="svc-dot"></div>
-                        <div class="svc-emoji">🔧</div>
-                        <h3>ASC Firozabad</h3>
-                        <span class="svc-status">Coming Soon</span>
-                    </article>
-                    <article class="svc-card" onclick="openForm('ascAgra','ASC Agra')" style="--i:3">
-                        <div class="svc-dot"></div>
-                        <div class="svc-emoji">🔧</div>
-                        <h3>ASC Agra</h3>
-                        <span class="svc-status">Coming Soon</span>
-                    </article>
+
+                <div class="action-area" style="text-align:center;">
+                    <button class="main-button service-btn" onclick="openForm('service', 'RANJNA CRM (SERVICE)')" style="background:linear-gradient(135deg,#10b981 0%,#059669 100%);color:#fff;border:none;padding:1.25rem 2.5rem;border-radius:12px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(16,185,129,0.4);display:inline-flex;align-items:center;gap:0.75rem;">
+                        <span style="font-size:1.2rem;">🔧</span>
+                        <span>Start Service Form</span>
+                        <span style="font-size:0.9rem;opacity:0.8;">→</span>
+                    </button>
+                    <p style="margin:1rem 0 0 0;color:rgba(255,255,255,0.6);font-size:0.85rem;">Complete service documentation with photo evidence</p>
                 </div>
             </section>
         </main>
